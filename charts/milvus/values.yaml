@@ -1,7 +1,7 @@
 # Milvus container configuration
 image:
   repository: milvusdb/milvus
-  tag: 2.4.0
+  tag: v2.4.17-gpu
   pullPolicy: Always
 
 # Resource requests and limits

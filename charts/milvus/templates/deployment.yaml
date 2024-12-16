@@ -18,8 +18,12 @@ spec:
       labels:
         app: milvus-standalone
       annotations:
+        prometheus.io/scrape: "true"
+        prometheus.io/path: "/metrics"
+        prometheus.io/port: "9091"
         {{- toYaml $.Values.annotations | nindent 8 }}
     spec:
+      runtimeClassName: nvidia
       containers:
         - name: milvus
           image: {{ .Values.image.repository }}:{{ .Values.image.tag }}
