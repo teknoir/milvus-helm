@@ -1,0 +1,13 @@
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: milvus-user-config
+  namespace: {{ $.Release.Namespace }}
+  labels:
+    app: milvus-standalone
+  annotations:
+    {{- toYaml $.Values.annotations | nindent 4 }}
+data:
+  user.yaml: |
+      # Extra config to override default milvus.yaml

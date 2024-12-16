@@ -1,0 +1,21 @@
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: milvus-env-config
+  namespace: {{ $.Release.Namespace }}
+  labels:
+    app: milvus-standalone
+  annotations:
+    {{- toYaml $.Values.annotations | nindent 4 }}
+data:
+  ETCD_USE_EMBED: "true"
+  ETCD_DATA_DIR: "/var/lib/milvus/etcd"
+  ETCD_CONFIG_PATH: "/milvus/configs/embedEtcd.yaml"
+  COMMON_STORAGETYPE: "local"
+
+
+
+  -v $(pwd)/volumes/milvus:/var/lib/milvus \
+  -v $(pwd)/embedEtcd.yaml:/milvus/configs/embedEtcd.yaml \
+  -v $(pwd)/user.yaml:/milvus/configs/user.yaml \

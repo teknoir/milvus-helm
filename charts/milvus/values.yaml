@@ -1,0 +1,23 @@
+# Milvus container configuration
+image:
+  repository: milvusdb/milvus
+  tag: 2.4.0
+  pullPolicy: Always
+
+# Resource requests and limits
+resources:
+  requests:
+    memory: 4Gi
+    cpu: 1
+  limits:
+    memory: 8Gi
+    cpu: 2
+
+# Service configuration
+service:
+  type: ClusterIP
+  port: 19530
+
+
+annotations:
+  teknoir.org/managed-by: devstudio
