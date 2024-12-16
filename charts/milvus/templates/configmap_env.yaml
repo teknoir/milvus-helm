@@ -13,9 +13,3 @@ data:
   ETCD_DATA_DIR: "/var/lib/milvus/etcd"
   ETCD_CONFIG_PATH: "/milvus/configs/embedEtcd.yaml"
   COMMON_STORAGETYPE: "local"
-
-
-
-  -v $(pwd)/volumes/milvus:/var/lib/milvus \
-  -v $(pwd)/embedEtcd.yaml:/milvus/configs/embedEtcd.yaml \
-  -v $(pwd)/user.yaml:/milvus/configs/user.yaml \
