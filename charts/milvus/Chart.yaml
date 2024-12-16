@@ -4,5 +4,5 @@ description: A Helm chart for Milvus Standalones
 
 
 type: application
-version: 0.0.5
-appVersion: "v2.4.17-gpu"
+version: 0.0.6
+appVersion: "v2.5.0-beta-gpu"
