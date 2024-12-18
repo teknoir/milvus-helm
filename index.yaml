@@ -3,6 +3,16 @@ entries:
   milvus:
   - apiVersion: v2
     appVersion: v2.5.0-beta-gpu
+    created: "2024-12-18T07:46:45.943235144Z"
+    description: A Helm chart for Milvus Standalones
+    digest: 6539c80f81bf226710a3dfce7ff3affbaf86700fa9e8e670cd00642dc775764c
+    name: milvus
+    type: application
+    urls:
+    - https://github.com/teknoir/milvus-helm/releases/download/milvus-0.1.0/milvus-0.1.0.tgz
+    version: 0.1.0
+  - apiVersion: v2
+    appVersion: v2.5.0-beta-gpu
     created: "2024-12-16T08:15:25.541467051Z"
     description: A Helm chart for Milvus Standalones
     digest: d75dc868d86d1d52f0270db5dedc16af0a9b46faa4e376a70396ee1e03c57eaf
@@ -71,4 +81,4 @@ entries:
     urls:
     - https://github.com/teknoir/milvus-helm/releases/download/milvus-0.0.1/milvus-0.0.1.tgz
     version: 0.0.1
-generated: "2024-12-16T08:15:25.541534357Z"
+generated: "2024-12-18T07:46:45.943275911Z"
