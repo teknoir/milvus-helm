@@ -9,19 +9,28 @@ metadata:
   annotations:
     {{- toYaml $.Values.annotations | nindent 4 }}
 spec:
+  type: {{ if .Values.nodePort.enabled }}NodePort{{ else }}ClusterIP{{ end }}
   ports:
     - name: tcp-milvus
       port: 19530
       protocol: TCP
       targetPort: 19530
+      {{- if .Values.nodePort.enabled }}
+      nodePort: 31953
+      {{- end }}
     - name: http-milvus
       port: 9091
       protocol: TCP
       targetPort: 9091
+      {{- if .Values.nodePort.enabled }}
+      nodePort: 31954
+      {{- end }}
     - name: tcp-etcd
       port: 2379
       protocol: TCP
       targetPort: 2379
-
+      {{- if .Values.nodePort.enabled }}
+      nodePort: 31955
+      {{- end }}
   selector:
     app: milvus-standalone

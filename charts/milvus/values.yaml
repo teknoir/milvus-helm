@@ -14,9 +14,8 @@ resources:
     cpu: 2
 
 # Service configuration
-service:
-  type: ClusterIP
-  port: 19530
+nodePort:
+  enabled: false
 
 
 annotations:
